@@ -9,17 +9,8 @@ function MovieApplication() {
   const [movies, setMovies] = useState([
     {
     id: 1,
-    title: "c",
+    title: "The default movie",
     rating: 5
-  }, {
-    id: 2,
-    title: "b",
-    rating: 2
-  },
-  {
-    id: 3,
-    title: "a",
-    rating: 1
   }
 ]);
 
@@ -63,8 +54,10 @@ function MovieApplication() {
         {movies.map(movie => <Movie key={movie.id} movie={movie} deleteMovie={deleteMovie}/>)}
       </ul>
       
-      <OrderByAlphaButton onClick={sortByAlpha} />
-      <OrderByGradeButton onClick={sortByGrade} />
+      <div className='d-flex justify-content-center'>
+          <OrderByAlphaButton onClick={sortByAlpha} />
+          <OrderByGradeButton onClick={sortByGrade} />
+      </div>
     </div>
   );
 }
